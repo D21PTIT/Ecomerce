@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'Customer_Service.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'thuongmai',  # Tên database trong MySQL
+        'NAME': 'customer',  # Tên database trong MySQL
         'USER': 'root',  # Username mặc định của MySQL
         'PASSWORD': '123456',  # Nếu có mật khẩu, điền vào đây
         'HOST': 'localhost',  # Nếu dùng XAMPP, vẫn để localhost

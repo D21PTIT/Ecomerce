@@ -109,3 +109,12 @@ def get_all_items_in_cart(request, cartId):
 
     cart['_id'] = str(cart['_id'])
     return Response(cart['items'], status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+def get_cart_by_customer(request, customerId):
+    cart_collection = settings.MONGO_DB['carts']
+    cart = cart_collection.find_one({"customerId": customerId})
+    if not cart:
+        return Response({"error": "Cart not found for this customer"}, status=status.HTTP_404_NOT_FOUND)
+    cart['_id'] = str(cart['_id'])
+    return Response(cart, status=status.HTTP_200_OK)

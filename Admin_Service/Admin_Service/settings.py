@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'admin'
+    'admins'
 ]
 
 MIDDLEWARE = [
@@ -76,10 +76,18 @@ WSGI_APPLICATION = 'Admin_Service.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'admin',  # Tên database trong MySQL
+        'USER': 'root',  # Username mặc định của MySQL
+        'PASSWORD': '123456',  # Nếu có mật khẩu, điền vào đây
+        'HOST': 'localhost',  # Nếu dùng XAMPP, vẫn để localhost
+        'PORT': '3306',  # Cổng mặc định của MySQL
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
+
 
 
 # Password validation

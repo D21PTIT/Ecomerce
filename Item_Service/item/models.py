@@ -8,6 +8,7 @@ class Item(models.Model):
     description = models.TextField()
     category = models.CharField(max_length=100)
     createdDate = models.DateField(auto_now_add=True)
+    imageLink = models.URLField(max_length=500, blank=True, null=True)  # Thêm trường imageLink
 
     def __str__(self):
         return self.name
@@ -51,4 +52,4 @@ from django.apps import AppConfig
 
 class ItemConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'item'
+    name = 'item'  # Sửa name thành 'item_app' để khớp với tên thư mục

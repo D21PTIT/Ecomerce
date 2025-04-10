@@ -27,4 +27,5 @@ urlpatterns = [
     path('phones/<str:itemId>/delete/', delete_phone, name='delete_phone'),
     # URL cho Get All Items
     path('items/all/', get_all_items, name='get_all_items'),
+    
 ]
